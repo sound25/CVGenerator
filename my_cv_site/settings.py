@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i9y7frwzlzq6cplb=no7f*wiu4mw!959%c-%am4)f)oqo#46l$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cv-generator-project.herokuapp.com','127.0.0.1']
 
 
 # Application definition
