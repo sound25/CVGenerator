@@ -1,3 +1,7 @@
+import pdfkit
+from django.http import HttpResponse
+from django.template import loader
+import io
 from django.shortcuts import render
 from .models import Profile
 # Create your views here.
@@ -18,4 +22,18 @@ def index(request):
 
 def resume(request,id):
     user_profile=Profile.objects.get(pk=id)
-    return render(request,'pdf/resume.html',{'user_profile':user_profile})
+    template=loader.get_template('pdf/resume.html')
+    html=template.render({'user_profile':user_profile})
+    pdf=pdfkit.from_string(html,False,options={
+        'page-size':'Letter',
+        'encoding':'UTF-8',
+    })
+    response=HttpResponse(pdf,content_type='application/pdf')
+    response['Content-Disposition']='attachment'
+    filename="Resume.pdf"
+    return response
+    #return render(request,'pdf/resume.html',{'user_profile':user_profile})
+
+def list(request):
+    profile=Profile.objects.all()
+    return render(request,'pdf/list.html',{'profile':profile})

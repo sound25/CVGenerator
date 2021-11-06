@@ -11,7 +11,9 @@
 <body>
     <div class="container">
         <div class="row">
+            
             <div class="col-md-7">
+                <h1>CV Generator</h1>
                 <form method='POST'>
                     {% csrf_token %}
                     <div class="form-group">
@@ -56,9 +58,13 @@
                   </form>
 
             </div>
+            
+   
+        <div class="col-md-2">
+            <a class="btn btn-warning" href="{% url 'list' %}">Saved Profiles</a>
         </div>
     </div>
     
-    
+</div>
 </body>
 </html>

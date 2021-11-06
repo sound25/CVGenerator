@@ -12,15 +12,17 @@
     <h2>{{user_profile.phone}}</h2>
     <hr><br>
     <p>Summary</p>
-    <p>{{user_profile.summary}}</p>
+    <p>{{user_profile.summary}}</p><hr>
     <p>Skills</p>
-    <p>{{user_profile.skills}}</p>
+    <p>{{user_profile.skills}}</p><hr>
     <p>Education Qualification</p>
     <ul>
-        <li>{{user_profile.degree}}</li>
-        <li>{{user_profile.school}}</li>
-        <li>{{user_profile.univesity}}</li>
-    </ul>
+       
+        <li>Schooling: {{user_profile.school}}</li>
+        <li>{{user_profile.degree}} from {{user_profile.univesity}}</li>
+    </ul><hr>
+    <p>Work Experience</p>
+    <p>{{user_profile.previous_work}}</p>
    
 </body>
 </html>
